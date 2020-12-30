@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hover_effect/hover_effect.dart';
 import 'package:unb/generic_button.dart';
 
 void main() {
