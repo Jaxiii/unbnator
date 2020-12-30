@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unb/simple_animated_button.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ],
+        centerTitle: false,
         title: Text(widget.title),
       ),
       body: Center(
@@ -62,47 +64,38 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(fontSize: 32),
                 ),
                 Container(
-                  width: 360,
+                  width: 500,
                   margin: EdgeInsets.only(top: 30.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      FlatButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        color: Colors.blue,
-                        onPressed: () => {},
-                        child: Container(
-                          height: 50,
-                          width: 150,
-                          child: Center(
-                            child: Text(
-                              'Hello',
-                              style: TextStyle(fontSize: 32),
-                            ),
-                          ),
-                        ),
+                      SimpleAnimatedButton(
+                        width: 160,
+                        height: 50,
                       ),
-                      FlatButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        color: Colors.blue,
-                        onPressed: () => {},
-                        child: Container(
-                          height: 50,
-                          width: 150,
-                          child: Center(
-                            child: Text(
-                              'World',
-                              style: TextStyle(fontSize: 32),
-                            ),
-                          ),
-                        ),
+                      SimpleAnimatedButton(
+                        width: 160,
+                        height: 50,
                       ),
                     ],
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SimpleAnimatedButton(
+                      width: 170,
+                      height: 200,
+                    ),
+                    SimpleAnimatedButton(
+                      width: 170,
+                      height: 200,
+                    ),
+                    SimpleAnimatedButton(
+                      width: 170,
+                      height: 200,
+                    ),
+                  ],
                 )
               ],
             ),
