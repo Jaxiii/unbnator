@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 
-class SimpleAnimatedButton extends StatefulWidget {
-  SimpleAnimatedButton({
+class CircleAnimatedButton extends StatefulWidget {
+  CircleAnimatedButton({
     Key key,
-    Widget innerWidget,
-    @required double width,
-    @required double height,
-  }) : 
-  innerWidget = innerWidget,
-  width = width,
-  height = height,
-  super(key: key);
+    double width,
+    double height,
+  })  : width = width,
+        height = height,
+        super(key: key);
 
-  final Widget innerWidget;
   final double width, height;
-  
+
   @override
-  _SimpleAnimatedButtonState createState() => _SimpleAnimatedButtonState();
+  _CircleAnimatedButtonState createState() => _CircleAnimatedButtonState();
 }
 
-class _SimpleAnimatedButtonState extends State<SimpleAnimatedButton> {
+class _CircleAnimatedButtonState extends State<CircleAnimatedButton> {
   int _enterCounter = 0;
   int _exitCounter = 0;
   double x = 0.0;
@@ -68,21 +64,21 @@ class _SimpleAnimatedButtonState extends State<SimpleAnimatedButton> {
       onHover: _updateLocation,
       onExit: _incrementExit,
       child: AnimatedContainer(
+        height: widget.height,
+        width: widget.width,
         duration: Duration(milliseconds: 120),
         margin:
             // Update on enter and exit with SetState on _incrementEnter and _incrementExit
             EdgeInsets.only(bottom: _hoverBottomMargin, top: _hoverTopMargin),
         child: FlatButton(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5.0),
+            borderRadius: BorderRadius.circular(100.0),
           ),
-          color: Colors.blue,
+          color: Colors.white,
           onPressed: () => {},
           child: Container(
             height: widget.height,
             width: widget.width,
-            alignment: Alignment.center,
-            child: widget.innerWidget,
           ),
         ),
       ),

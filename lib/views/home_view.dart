@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unb/global_widgets/circle_button.dart';
 import 'package:unb/global_widgets/simple_animated_button.dart';
 
 class HomeView extends StatefulWidget {
@@ -31,57 +32,84 @@ class _HomeViewState extends State<HomeView> {
         centerTitle: false,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Text(
-                  'Sample Title',
-                  style: TextStyle(fontSize: 72),
-                ),
-                Text(
-                  'Sample Subtitle',
-                  style: TextStyle(fontSize: 32),
-                ),
-                Container(
-                  width: 500,
-                  margin: EdgeInsets.only(top: 30.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SimpleAnimatedButton(
-                        width: 160,
-                        height: 50,
-                      ),
-                      SimpleAnimatedButton(
-                        width: 160,
-                        height: 50,
-                      ),
-                    ],
-                  ),
-                ),
-                Row(
+      body: Stack(
+        children: [
+          Column(
+            children: [
+              Text(
+                'Sample Title',
+                style: TextStyle(fontSize: 72),
+              ),
+              Text(
+                'Sample Subtitle',
+                style: TextStyle(fontSize: 32),
+              ),
+              Container(
+                width: 500,
+                margin: EdgeInsets.only(top: 30.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SimpleAnimatedButton(
-                      width: 170,
-                      height: 200,
+                      width: 160,
+                      height: 50,
+                      innerWidget: Text('Login'),
                     ),
                     SimpleAnimatedButton(
-                      width: 170,
-                      height: 200,
-                    ),
-                    SimpleAnimatedButton(
-                      width: 170,
-                      height: 200,
+                      width: 160,
+                      height: 50,
+                      innerWidget: Text('Sign Up'),
                     ),
                   ],
-                )
-              ],
-            ),
-          ],
-        ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SimpleAnimatedButton(
+                    width: 170,
+                    height: 200,
+                    innerWidget: Text('Classes Subscriptions'),
+                  ),
+                  SimpleAnimatedButton(
+                    width: 170,
+                    height: 200,
+                    innerWidget: Text('Calendar'),
+                  ),
+                  SimpleAnimatedButton(
+                    width: 170,
+                    height: 200,
+                    innerWidget: Text('Missined Classes'),
+                  ),
+                ],
+              ),
+              SimpleAnimatedButton(
+                height: MediaQuery.of(context).size.height / 3,
+                width: MediaQuery.of(context).size.width / 1.2,
+                innerWidget: Stack(
+                  children: [
+                    Row(
+                      children: [
+                        CircleAnimatedButton(
+                          width: 50.0,
+                          height: 50.0,
+                        ),
+                        CircleAnimatedButton(
+                          width: 50.0,
+                          height: 50.0,
+                        ),
+                        CircleAnimatedButton(
+                          height: 50.0,
+                          width: 50.0,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
